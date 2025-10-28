@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiraayu Premium Seeds - Healthy Life</title>
+
+    <style>
+        /* --- BRAND COLORS & TYPOGRAPHY --- */
+        :root {
+            --color-primary: #0E4D40;     /* Dark Forest Green */
+            --color-secondary: #D4AF37;   /* Classic Gold/Bronze */
+            --color-text: #333333;
+            --color-light-bg: #E6EADF;    /* Soft, earthy background */
+            --color-white: #ffffff;
+        }
+
+        /* --- GLOBAL STYLES --- */
+        body {
+            font-family: 'Georgia', serif; /* A classic, premium font */
+            margin: 0;
+            padding: 0;
+            color: var(--color-text);
+            background-color: var(--color-white);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        h1, h2, h3 {
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            background-color: var(--color-primary);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+        .logo-icon {
+            /* Placeholder for the transparent circular icon */
+            width: 40px; 
+            height: 40px;
+            background-color: var(--color-secondary); /* Simulating gold circle border */
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 2px solid var(--color-secondary);
+        }
+        .logo-text {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--color-white);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .nav-links a {
+            color: var(--color-white);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--color-secondary);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--color-light-bg) 0%, var(--color-white) 100%);
+            min-height: 70vh;
+        }
+        .hero-text {
+            max-width: 50%;
+        }
+        .hero-text h1 {
+            font-size: 3.8em;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .hero-text p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            color: #555;
+        }
+        .cta-button {
+            background-color: var(--color-secondary);
+            color: var(--color-primary);
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: background-color 0.3s, transform 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .cta-button:hover {
+            background-color: #c09f30;
+            transform: translateY(-2px);
+        }
+        .product-image-hero {
+            max-width: 40%;
+            /* Placeholder styling for the premium plastic container image */
+            padding: 20px;
+        }
+        .product-image-hero img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* --- BENEFITS GRID SECTION (Four Pillars) --- */
+        .benefits-section {
+            padding: 80px 0;
+            text-align: center;
+            background-color: var(--color-white);
+        }
+        .benefits-section h2 {
+            margin-bottom: 50px;
+            font-size: 2.5em;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .benefit-item {
+            padding: 30px 20px;
+            background-color: var(--color-light-bg);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: background-color 0.3s;
+        }
+        .benefit-item:hover {
+            background-color: #d8e0d4;
+        }
+        .benefit-item h3 {
+            font-size: 1.4em;
+            margin-top: 0;
+        }
+
+        /* --- PRODUCT SHOWCASE (Gift Box) --- */
+        .showcase-section {
+            padding: 80px 0;
+            text-align: center;
+            background-color: var(--color-light-bg);
+        }
+        .product-card-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+            gap: 30px;
+        }
+        .product-card {
+            background-color: var(--color-white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 350px;
+            text-align: left;
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .product-card h3 {
+            font-size: 1.6em;
+            margin-top: 0;
+        }
+        .product-card .price {
+            font-size: 1.4em;
+            color: var(--color-secondary);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--color-primary);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+
+        /* --- RESPONSIVENESS --- */
+        @media (max-width: 900px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text, .product-image-hero {
+                max-width: 100%;
+            }
+            .product-image-hero {
+                order: -1; /* Move image above text on mobile */
+                margin-bottom: 30px;
+            }
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .product-card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .product-card {
+                margin-bottom: 20px;
+            }
+        }
+        @media (max-width: 600px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-area">
+                    <img src="chiraayu_logo_1.png" alt="Chiraayu Premium Seeds Logo" style="height: 40px;">
+                </div>
+                <div class="nav-links">
+                    <a href="products.html">Products</a>
+                    <a href="#benefits">Benefits</a>
+                    <a href="#about">Our Story</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+                <div class="hero-text">
+                    <h1>The Daily Anchor for <br>Your Wellness Journey.</h1>
+                    <p>Premium Seeds for a Healthy Life. Unlock vitality with our expertly balanced four-seed blend.</p>
+                    <a href="#products" class="cta-button">Explore Products</a>
+                </div>
+                <div class="product-image-hero">
+                    <img src="chiraayu_logo_1.png" alt="Chiraayu Premium Seed Blend Container">
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="benefits-section">
+            <div class="container">
+                <h2>Four Seeds, Four Pillars of Health.</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <h3>Heart & Brain</h3>
+                        <p>Essential Omega-3s (ALA) for cognitive function and cardiovascular support.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>Inner Balance</h3>
+                        <p>High fiber content for excellent gut health and smooth, steady digestion.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>Sustained Energy</h3>
+                        <p>Plant protein and iron to combat fatigue and fuel your daily activities.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>Immunity Boost</h3>
+                        <p>Packed with Zinc and Magnesium to fortify your immune system and promote recovery.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="showcase-section">
+            <div class="container">
+                <h2>Find Your Perfect Blend</h2>
+                <div class="product-card-container">
+                    
+                    <div class="product-card">
+                        <img src="chiraayu_box.png" alt="Chiraayu 100g Container">
+                        <h3>The Daily Blend (100g)</h3>
+                        <p class="price">₹ 299.00</p>
+                        <p>Our signature mix for daily maintenance and lasting vitality.</p>
+                        <a href="#" class="cta-button" style="background-color: var(--color-primary); color: var(--color-white); padding: 10px 20px;">Buy Now</a>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="chirayu_gift.png" alt="Chiraayu Gift Box">
+                        <h3>The Chiraayu Gift Set</h3>
+                        <p class="price">₹ 999.00</p>
+                        <p>Individual packs of all four premium seeds in an elegant presentation box.</p>
+                        <a href="#" class="cta-button" style="background-color: var(--color-primary); color: var(--color-white); padding: 10px 20px;">Order Gift Box</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>CHIRAAYU. Premium Seeds for a Healthy Life.</p>
+            <p style="margin-top: 5px;">&copy; 2025. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

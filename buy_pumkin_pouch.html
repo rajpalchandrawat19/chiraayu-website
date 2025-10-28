@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiraayu Pumpkin Seeds - Product Details</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* --- BRAND COLORS & TYPOGRAPHY --- */
+        :root {
+            --color-primary: #0E4D40;     /* Dark Forest Green */
+            --color-secondary: #D4AF37;   /* Classic Gold/Bronze */
+            --color-text: #333333;
+            --color-light-bg: #E6EADF;    /* Soft, earthy background */
+            --color-white: #ffffff;
+            --color-gold-hover: #C0A130;
+        }
+
+        /* --- GLOBAL STYLES --- */
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            color: var(--color-text);
+            background-color: var(--color-light-bg); /* Light background for the page */
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        .container {
+            width: 90%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        h1, h2, h3 {
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        /* --- HEADER & NAVIGATION (Copied for consistency) --- */
+        header {
+            background-color: var(--color-primary);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+        .logo-area img {
+            height: 65px; 
+            width: auto;
+            margin-right: 10px;
+            display: block;
+        }
+        .nav-links a {
+            color: var(--color-white);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--color-secondary);
+        }
+        .active-link {
+            color: var(--color-secondary) !important;
+            border-bottom: 2px solid var(--color-secondary);
+            padding-bottom: 2px;
+        }
+        
+        /* --- PRODUCT DETAIL LAYOUT --- */
+        .product-section {
+            padding: 60px 0;
+            background-color: var(--color-white);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            margin: 40px auto;
+        }
+        .product-layout {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        /* --- IMAGE COLUMN --- */
+        .product-image-col {
+            flex: 1;
+            padding: 20px;
+            border-right: 1px solid #eee;
+            text-align: center;
+        }
+        .product-image-col img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .product-image-col img:hover {
+            transform: scale(1.02);
+        }
+
+        /* --- DETAILS COLUMN --- */
+        .product-details-col {
+            flex: 2;
+            padding: 20px;
+        }
+        .product-details-col h1 {
+            font-size: 3em;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-transform: capitalize;
+        }
+        .product-details-col .subtitle {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--color-secondary);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .product-details-col .price-box {
+            font-size: 2em;
+            color: var(--color-primary);
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        
+        /* --- BUY BUTTONS --- */
+        .buy-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+            max-width: 400px;
+        }
+        .buy-buttons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 1.1em;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        .buy-buttons a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .buy-buttons i {
+            margin-right: 10px;
+            font-size: 1.3em;
+        }
+
+        /* Platform specific button styles */
+        .btn-amazon {
+            background-color: #FF9900;
+            color: var(--color-white);
+        }
+        .btn-flipkart {
+            background-color: #2874F0;
+            color: var(--color-white);
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: var(--color-white);
+        }
+
+        /* --- BENEFITS & USAGE SECTION --- */
+        .benefits-usage {
+            padding: 40px 0;
+            border-top: 2px solid var(--color-light-bg);
+            margin-top: 40px;
+        }
+        .benefits-usage h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+        .feature-item {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .feature-item i {
+            font-size: 2em;
+            color: var(--color-secondary);
+            margin-bottom: 10px;
+        }
+        .feature-item h3 {
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        /* --- FOOTER (Copied for consistency) --- */
+        footer {
+            background-color: var(--color-primary);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+
+        /* --- RESPONSIVENESS --- */
+        @media (max-width: 900px) {
+            .product-layout {
+                flex-direction: column;
+                align-items: center;
+            }
+            .product-image-col {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 30px;
+            }
+            .product-details-col {
+                flex: none;
+                max-width: 100%;
+            }
+            .product-details-col h1 {
+                font-size: 2.5em;
+                text-align: center;
+            }
+            .product-details-col .subtitle {
+                text-align: center;
+                display: block;
+            }
+            .price-box {
+                text-align: center;
+            }
+            .buy-buttons {
+                max-width: 100%;
+            }
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-area">
+                    <img src="chiraayu_logo_1.png" alt="Chiraayu Premium Seeds Logo" style="height: 65px; margin-right: 10px;">
+                </div>
+                <div class="nav-links">
+                	<a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <!-- Active Link for Benefits Page -->
+                    <a href="benifits.html">Benefits</a>
+                    <a href="about.html">Our Story</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container product-section">
+            <div class="product-layout">
+                
+                <!-- Product Image Column -->
+                <div class="product-image-col">
+                    <img src="chirayu_pumpkin_pouch.png" alt="Chiraayu Premium Pumpkin Seeds Container">
+                </div>
+
+                <!-- Product Details Column -->
+                <div class="product-details-col">
+                    <h1>Premium Pumpkin Seeds</h1>
+                    <p class="subtitle">Magnesium, Zinc, and Plant Protein Powerhouse.</p>
+                    
+                    <div class="price-box">
+                        ₹ 279.00
+                    </div>
+
+                    <h2>Product Description</h2>
+                    <p>Experience the delicious crunch and powerful nutrition of **Chiraayu Premium Pumpkin Seeds**. These vibrant green seeds are celebrated for being a leading source of **Magnesium** (a key mineral for sleep and muscle function) and **Zinc** (essential for immunity). Packed with high-quality plant protein and healthy fats, they make a perfect, satiating snack or addition to your favorite meals. They are gently roasted to enhance their natural, nutty flavor.</p>
+
+                    <h2>Key Highlights</h2>
+                    <ul>
+                        <li>**High in Magnesium:** Supports healthy sleep cycles and muscle relaxation.</li>
+                        <li>**Excellent Source of Zinc:** Boosts immune system health and recovery.</li>
+                        <li>**Rich Plant Protein:** Ideal for muscle building and satiety.</li>
+                        <li>**Net Weight:** 100g.</li>
+                    </ul>
+
+                    <!-- Buy Buttons -->
+                    <div class="buy-buttons">
+                        <a href="https://amazon.in/chiraayu-pumpkin" target="_blank" class="btn-amazon">
+                            <i class="fab fa-amazon"></i> Buy on Amazon
+                        </a>
+                        <a href="https://flipkart.com/chiraayu-pumpkin" target="_blank" class="btn-flipkart">
+                            <i class="fas fa-shopping-bag"></i> Buy on Flipkart
+                        </a>
+                        <!-- Replace 919876543210 with your actual WhatsApp number -->
+                        <a href="https://wa.me/919876543210?text=I%20want%20to%20order%20the%20Chiraayu%20Premium%20Pumpkin%20Seeds." target="_blank" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dedicated Benefits Section (Customized for Pumpkin) -->
+            <div class="container benefits-usage">
+                <h2>Health & Usage Guide</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Immune Boost</h3>
+                        <p>High **Zinc** content is vital for strengthening your body's natural defense systems.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-moon"></i>
+                        <h3>Sleep & Mood</h3>
+                        <p>Rich in **Magnesium** and Tryptophan, aiding relaxation and promoting restful sleep.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-bone"></i>
+                        <h3>Muscle & Bone</h3>
+                        <p>Protein and high Magnesium support bone density and muscle maintenance.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Antioxidant Rich</h3>
+                        <p>Contains powerful antioxidants and Vitamin E to fight free radicals.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Versatile Snacking</h3>
+                        <p>Deliciously crunchy, perfect straight out of the container or mixed into trail mix.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-fire"></i>
+                        <h3>Usage: Roasting</h3>
+                        <p>Lightly roast them with spices for a warm, savory, high-protein snack.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>CHIRAAYU. Premium Seeds for a Healthy Life.</p>
+            <p style="margin-top: 5px;">&copy; 2025. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiraayu Shop - All Premium Seeds</title>
+
+    <style>
+        /* --- BRAND COLORS & TYPOGRAPHY --- */
+        :root {
+            --color-primary: #0E4D40;     /* Dark Forest Green */
+            --color-secondary: #D4AF37;   /* Classic Gold/Bronze */
+            --color-text: #333333;
+            --color-light-bg: #E6EADF;    /* Soft, earthy background */
+            --color-white: #ffffff;
+        }
+
+        /* --- GLOBAL STYLES --- */
+        body {
+            font-family: 'Georgia', serif; 
+            margin: 0;
+            padding: 0;
+            color: var(--color-text);
+            background-color: var(--color-white);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        .container {
+            width: 90%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        h1, h2, h3 {
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            background-color: var(--color-primary);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+        .logo-icon {
+            /* Enlarged placeholder for the transparent circular logo */
+            width: 60px; 
+            height: 60px;
+            background-color: var(--color-secondary); 
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid var(--color-secondary);
+        }
+        .logo-text {
+            font-size: 2.5em; /* Increased size */
+            font-weight: bold;
+            color: var(--color-white);
+            text-transform: uppercase;
+            margin-left: 15px;
+            letter-spacing: 2px;
+        }
+        .nav-links a {
+            color: var(--color-white);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--color-secondary);
+        }
+
+        /* --- SHOP PAGE HEADER --- */
+        .shop-header {
+            text-align: center;
+            padding: 40px 0 20px 0;
+            background-color: var(--color-light-bg);
+            border-bottom: 3px solid var(--color-primary);
+        }
+        .shop-header h1 {
+            font-size: 3.5em;
+            margin: 0;
+        }
+        .shop-header p {
+            font-size: 1.2em;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        /* --- PRODUCT GRID --- */
+        .products-section {
+            padding: 60px 0 80px 0;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .product-card {
+            background-color: var(--color-white);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .product-card img {
+            width: 80%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .product-card h3 {
+            font-size: 1.5em;
+            margin: 10px 0 5px 0;
+            line-height: 1.2;
+        }
+        .product-card .price {
+            font-size: 1.3em;
+            color: var(--color-secondary);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .buy-button {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: background-color 0.3s;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+        .buy-button:hover {
+            background-color: #08382c;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--color-primary);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 2em;
+            }
+            .shop-header h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-area">
+                    <img src="chiraayu_logo_1.png" alt="Chiraayu Premium Seeds Logo" style="height: 65px; margin-right: 10px;">
+                </div>
+                <div class="nav-links">
+                	<a href="index.html">Home</a>
+                    <a href="products.html"class="active-link">Products</a>
+                    <a href="benifits.html">Benefits</a>
+                    <a href="about.html">Our Story</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="shop-header">
+            <div class="container">
+                <h1>Unlock Wellness. Choose Your Seed.</h1>
+                <p>Explore our full range of premium single seeds, signature blends, and gift sets for every lifestyle need.</p>
+            </div>
+        </section>
+
+        <!-- PRODUCT GRID SECTION -->
+        <section id="products" class="products-section">
+            <div class="container">
+                <div class="product-grid">
+                    
+                    <!-- 1. Signature Blend Container -->
+                    <div class="product-card">
+                        <img src="chirayu_blend.png" alt="Chiraayu Signature Blend Container">
+                        <h3>Signature Daily Blend (Container)</h3>
+                        <p class="price">₹ 299.00</p>
+                        <p>Our 4-in-1 mix for full-spectrum health support.</p>
+                        <a href="buy_blend.html" class="buy-button">Buy</a>
+                    </div>
+
+                    <!-- 2. Gift Set -->
+                    <div class="product-card">
+                        <img src="chirayu_gift.png" alt="Chiraayu Deluxe Gift Set">
+                        <h3>Deluxe Gift Set (Box)</h3>
+                        <p class="price">₹ 999.00</p>
+                        <p>A beautiful collection of all individual seeds for gifting.</p>
+                        <a href="buy_giftset.html" class="buy-button">Buy</a>
+                    </div>
+                    
+                    <!-- --- CONTAINERS (Premium Focus) --- -->
+
+                    <div class="product-card">
+                        <img src="chirayu_chia.png" alt="Chia Seeds Container">
+                        <h3>Chia Seeds (Container)</h3>
+                        <p class="price">₹ 349.00</p>
+                        <p>High in Omega-3s and fiber for digestive health.</p>
+                        <a href="buy_chia_container.html" class="buy-button">Buy</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="chirayu_pumpkin.png" alt="Pumpkin Seeds Container">
+                        <h3>Pumpkin Seeds (Container)</h3>
+                        <p class="price">₹ 319.00</p>
+                        <p>Rich in Zinc and Magnesium for improved sleep.</p>
+                        <a href="buy_pumkin_container.html" class="buy-button">Buy</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="chirayu_watermelon.png" alt="Watermelon Seeds Container">
+                        <h3>Watermelon Seeds (Container)</h3>
+                        <p class="price">₹ 289.00</p>
+                        <p>A great source of protein and essential amino acids.</p>
+                        <a href="buy_watermelon_container.html" class="buy-button">Buy</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="chirayu_flax.png" alt="Flax Seeds Container">
+                        <h3>Flax Seeds (Container)</h3>
+                        <p class="price">₹ 269.00</p>
+                        <p>Lignans and high fiber content for hormonal balance.</p>
+                        <a href="buy_flax_container.html" class="buy-button">Buy</a>
+                    </div>
+
+                    <!-- --- POUCHES (Value/Refill Option) --- -->
+                    
+                    <div class="product-card">
+                        <img src="chirayu_chia_pouch.png" alt="Chia Seeds Pouch">
+                        <h3>Chia Seeds (Pouch)</h3>
+                        <p class="price">₹ 299.00</p>
+                        <p>A convenient pouch option for easy storage.</p>
+                        <a href="buy_chia_pouch.html" class="buy-button">Buy</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="chirayu_pumpkin_pouch.png" alt="Pumpkin Seeds Pouch">
+                        <h3>Pumpkin Seeds (Pouch)</h3>
+                        <p class="price">₹ 269.00</p>
+                        <p>Refill your container with this economical pouch.</p>
+                        <a href="buy_pumkin_pouch.html" class="buy-button">Buy</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="chirayu_watermelon_pouch.png" alt="Watermelon Seeds Pouch">
+                        <h3>Watermelon Seeds (Pouch)</h3>
+                        <p class="price">₹ 239.00</p>
+                        <p>Perfect for baking and on-the-go snacking.</p>
+                        <a href="buy_watermelon_pouch.html" class="buy-button">Buy</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="chirayu_flax_pouch.png" alt="Flax Seeds Pouch">
+                        <h3>Flax Seeds (Pouch)</h3>
+                        <p class="price">₹ 219.00</p>
+                        <p>High-value pack, easy to grind or add to smoothies.</p>
+                        <a href="buy_flax_pouch.html" class="buy-button">Buy</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>CHIRAAYU. Premium Seeds for a Healthy Life.</p>
+            <p style="margin-top: 5px;">&copy; 2025. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiraayu - Our Story</title>
+
+    <style>
+        /* --- BRAND COLORS & TYPOGRAPHY (Copied from products.html) --- */
+        :root {
+            --color-primary: #0E4D40;     /* Dark Forest Green */
+            --color-secondary: #D4AF37;   /* Classic Gold/Bronze */
+            --color-text: #333333;
+            --color-light-bg: #E6EADF;    /* Soft, earthy background */
+            --color-white: #ffffff;
+            --color-accent-dark: #0A3D33;
+        }
+
+        /* --- GLOBAL STYLES (Copied from products.html) --- */
+        body {
+            font-family: 'Georgia', serif; 
+            margin: 0;
+            padding: 0;
+            color: var(--color-text);
+            background-color: var(--color-white);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        .container {
+            width: 90%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        h1, h2, h3 {
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        /* --- HEADER & NAVIGATION (Copied from products.html) --- */
+        header {
+            background-color: var(--color-primary);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+        .logo-icon {
+            width: 60px; 
+            height: 60px;
+            background-color: var(--color-secondary); 
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid var(--color-secondary);
+        }
+        .logo-text {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--color-white);
+            text-transform: uppercase;
+            margin-left: 15px;
+            letter-spacing: 2px;
+        }
+        .nav-links a {
+            color: var(--color-white);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--color-secondary);
+        }
+        /* Active link style for the current page */
+        .active-link {
+            color: var(--color-secondary) !important;
+            border-bottom: 2px solid var(--color-secondary);
+            padding-bottom: 2px;
+        }
+
+        /* --- OUR STORY CONTENT STYLES --- */
+        .story-hero {
+            text-align: center;
+            padding: 80px 0; 
+            background-color: var(--color-light-bg);
+            border-bottom: 5px solid var(--color-secondary); 
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        .story-hero h2 {
+            font-size: 4.5em; 
+            margin: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-accent-dark);
+        }
+        .story-hero p {
+            font-size: 1.6em; 
+            color: var(--color-primary);
+            margin-top: 20px;
+            font-style: italic;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .story-section {
+            padding: 80px 0;
+        }
+
+        .story-chapter {
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            background-color: var(--color-white);
+            border: 1px solid var(--color-light-bg);
+            transition: box-shadow 0.3s ease;
+        }
+        .story-chapter:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .story-chapter.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .story-text {
+            flex: 2;
+            padding: 0 30px;
+        }
+
+        .story-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            position: relative;
+        }
+        .story-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border: 4px solid var(--color-secondary); /* Gold frame */
+        }
+        .story-image .caption {
+            display: block;
+            margin-top: 15px;
+            font-style: italic;
+            color: var(--color-primary);
+            font-size: 1em;
+        }
+
+        .story-text h3 {
+            font-size: 2.5em;
+            color: var(--color-secondary);
+            margin-top: 0;
+            border-bottom: 2px solid var(--color-primary);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .story-text p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 1em;
+        }
+        
+        /* CTA Section for the bottom of the story */
+        .story-cta {
+            text-align: center;
+            padding: 60px 0;
+        }
+        .story-cta h3 {
+             font-size: 3em;
+             color: var(--color-primary);
+        }
+        .story-cta p {
+             font-size: 1.4em;
+             color: #555;
+             margin-bottom: 30px;
+        }
+        .cta-button {
+            background-color: var(--color-secondary); 
+            color: var(--color-primary); 
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: 900;
+            border-radius: 50px;
+            transition: background-color 0.3s, transform 0.2s;
+            display: inline-block;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .cta-button:hover {
+            background-color: #C0A130; 
+            transform: translateY(-2px);
+        }
+
+
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .story-chapter, .story-chapter.reverse {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .story-text {
+                padding: 20px 0 0 0;
+            }
+            .story-image {
+                min-width: 100%;
+                order: -1; /* Image first on mobile */
+                margin-bottom: 20px;
+            }
+            .story-hero h2 {
+                font-size: 3em;
+            }
+            .story-hero p {
+                font-size: 1.2em;
+            }
+        }
+
+        /* --- FOOTER (Copied from products.html) --- */
+        footer {
+            background-color: var(--color-primary);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER (Copied from chiraayu_benefits.html) -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-area">
+                    <img src="chiraayu_logo_1.png" alt="Chiraayu Premium Seeds Logo" style="height: 65px; margin-right: 10px;">
+                </div>
+                <div class="nav-links">
+                	<a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <!-- Active Link for Benefits Page -->
+                    <a href="benifits.html">Benefits</a>
+                    <a href="about.html"class="active-link">Our Story</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        <!-- Hero Header -->
+        <section class="story-hero">
+            <div class="container">
+                <h2>The Legacy of Longevity</h2>
+                <p>Born from a personal quest for health, Chiraayu is more than a brand—it is a promise of wellness rooted in ancient wisdom and nature's finest seeds.</p>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <div class="container">
+                
+                <!-- CHAPTER 1: THE BEGINNING -->
+                <article class="story-chapter">
+                    <div class="story-text">
+                        <h3>Chapter I: The Founder's Quest</h3>
+                        <p>Our journey began not in a boardroom, but in a quiet kitchen, driven by a founder's struggle. Having faced persistent energy dips and health challenges, he turned away from fleeting modern fixes and sought **ancient, time-tested solutions**. His grandmother, a village elder who lived a vibrant life well into her nineties, often spoke of `Chiraayu`—a Sanskrit word meaning "long life." Her secret was simple: the daily consumption of forgotten seeds, the tiny, potent treasures of the earth.</p>
+                        <p>This wisdom ignited a mission: to re-introduce the immense, overlooked nutritional value of seeds to the modern world, without compromise on quality or sourcing.</p>
+                    </div>
+                    <div class="story-image">
+                        <img src="https://placehold.co/450x300/E6EADF/0E4D40?text=Ancient+Wisdom" alt="Image of old parchment or aged hands holding seeds">
+                        <span class="caption">The memory of ancient wisdom guides our sourcing.</span>
+                    </div>
+                </article>
+
+                <!-- CHAPTER 2: THE EPIPHANY -->
+                <article class="story-chapter reverse">
+                    <div class="story-text">
+                        <h3>Chapter II: From Farm to Philosophy</h3>
+                        <p>The quest led our founder across continents, meeting with indigenous farmers and ethical cultivators who honored the soil. It was here, standing in a field of sun-drenched chia plants, that the philosophy crystallized. **Quality is not an accident; it is a harvest of mindful cultivation.** He realized that the true power of a seed lies not just in its genetics, but in the purity of the environment it is grown in.</p>
+                        <p>Chiraayu became a commitment to this purity. Every batch of seed is sourced directly, ensuring it is untouched by harsh chemicals and retains its maximum nutritional density—the very essence of longevity.</p>
+                    </div>
+                    <div class="story-image">
+                        <img src="https://placehold.co/450x300/E6EADF/0E4D40?text=Ethical+Sourcing" alt="Image of a farmer's hands gently holding handful of seeds">
+                        <span class="caption">Our promise: purity, from the field to your table.</span>
+                    </div>
+                </article>
+
+                <!-- CHAPTER 3: THE LEGACY -->
+                <article class="story-chapter">
+                    <div class="story-text">
+                        <h3>Chapter III: The Chiraayu Promise</h3>
+                        <p>Today, Chiraayu is more than just a purveyor of premium seeds; we are curators of vitality. We believe that incorporating these simple, powerful foods into your diet is the most accessible path to a longer, more energetic life. Our name, **Chiraayu**, is our constant reminder and our solemn promise to you: we are here to support your health journey with the purest ingredients nature can offer.</p>
+                        <p>We invite you to experience the legacy and make the choice for longevity. Welcome to the Chiraayu family.</p>
+                    </div>
+                    <div class="story-image">
+                        <img src="https://placehold.co/450x300/E6EADF/0E4D40?text=The+Chiraayu+Blend" alt="Image of a premium, labeled jar of mixed seeds">
+                        <span class="caption">Our goal is to help you unlock your own Chiraayu.</span>
+                    </div>
+                </article>
+
+                <div class="story-cta">
+                    <h3>Ready to Begin Your Wellness Journey?</h3>
+                    <p>Experience the profound difference that ethically sourced, nutrient-dense seeds can make in your life.</p>
+                    <a href="products.html" class="cta-button">
+                        Explore Our Products
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER (Copied from chiraayu_benefits.html) -->
+    <footer>
+        <div class="container">
+            <p>CHIRAAYU. Premium Seeds for a Healthy Life.</p>
+            <p style="margin-top: 5px;">&copy; 2025. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

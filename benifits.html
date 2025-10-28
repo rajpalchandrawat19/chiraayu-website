@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiraayu - Health Benefits</title>
+
+    <style>
+        /* --- BRAND COLORS & TYPOGRAPHY (Copied from products.html) --- */
+        :root {
+            --color-primary: #0E4D40;     /* Dark Forest Green */
+            --color-secondary: #D4AF37;   /* Classic Gold/Bronze */
+            --color-text: #333333;
+            --color-light-bg: #E6EADF;    /* Soft, earthy background */
+            --color-white: #ffffff;
+            --color-accent-dark: #0A3D33; /* Slightly darker primary for depth */
+        }
+
+        /* --- GLOBAL STYLES (Copied from products.html) --- */
+        body {
+            font-family: 'Georgia', serif; 
+            margin: 0;
+            padding: 0;
+            color: var(--color-text);
+            background-color: var(--color-white);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        .container {
+            width: 90%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        h1, h2, h3 {
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        /* --- HEADER & NAVIGATION (Copied from products.html) --- */
+        header {
+            background-color: var(--color-primary);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+        .logo-icon {
+            /* Enlarged placeholder for the transparent circular logo */
+            width: 60px; 
+            height: 60px;
+            background-color: var(--color-secondary); 
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid var(--color-secondary);
+        }
+        .logo-text {
+            font-size: 2.5em; /* Increased size */
+            font-weight: bold;
+            color: var(--color-white);
+            text-transform: uppercase;
+            margin-left: 15px;
+            letter-spacing: 2px;
+        }
+        .nav-links a {
+            color: var(--color-white);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--color-secondary);
+        }
+        /* Active link style for the current page */
+        .active-link {
+            color: var(--color-secondary) !important;
+            border-bottom: 2px solid var(--color-secondary);
+            padding-bottom: 2px;
+        }
+
+        /* --- BENEFIT PAGE CONTENT STYLES (Premium Look Enhancements) --- */
+        .benefit-header {
+            text-align: center;
+            padding: 60px 0; /* Increased padding */
+            background-color: var(--color-light-bg);
+            border-bottom: 5px solid var(--color-secondary); /* Thicker gold line for luxury */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow on hero */
+        }
+        .benefit-header h2 {
+            font-size: 4em; /* Larger, more impactful title */
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .benefit-header p {
+            font-size: 1.4em; /* Larger subtitle */
+            color: var(--color-primary); /* Subtitle in primary color */
+            margin-top: 15px;
+            font-style: italic;
+        }
+        .benefits-section {
+            padding: 60px 0 80px 0;
+        }
+        .seed-card {
+            display: flex;
+            background-color: var(--color-white);
+            border-radius: 15px;
+            overflow: hidden;
+            /* Deeper, more substantial shadow */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+            border: 2px solid rgba(212, 175, 55, 0.3); /* Subtle gold frame */
+            margin-bottom: 50px; /* Increased margin */
+            transition: transform 0.3s ease;
+        }
+        .seed-card:hover {
+            transform: translateY(-5px); /* Lift on hover for premium feel */
+        }
+        .seed-card-feature {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 40px;
+            width: 35%; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .seed-card-feature h3 {
+            color: var(--color-secondary);
+            font-size: 2.5em; /* Larger feature title */
+            margin-top: 15px;
+            border-bottom: 3px solid var(--color-secondary); /* Thicker separator */
+            padding-bottom: 10px;
+        }
+        .seed-card-feature p {
+             font-size: 1.1em;
+             margin-top: 10px;
+             opacity: 0.9;
+        }
+        .seed-card-feature img {
+             width: 80%;
+             height: auto;
+             border-radius: 12px; /* Slightly larger border-radius for image */
+             margin-top: 25px;
+             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Stronger shadow on inner image */
+             border: 3px solid var(--color-secondary);
+        }
+        .seed-card-benefits {
+            padding: 40px;
+            width: 65%; 
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px; /* Increased gap */
+        }
+        .detail-card {
+            padding: 20px; /* Increased padding */
+            border: 1px solid var(--color-light-bg); /* Use light background for subtle border */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Light inner shadow */
+            transition: all 0.3s;
+        }
+        .detail-card:hover {
+             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+             border-color: var(--color-secondary); /* Gold border on hover */
+             background-color: var(--color-light-bg);
+        }
+        .detail-card h4 {
+            color: var(--color-primary); /* Primary color for title for better readability */
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            font-weight: bold;
+            position: relative;
+            padding-left: 20px; /* Space for the gold accent dot */
+        }
+        .detail-card h4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            background-color: var(--color-secondary);
+            border-radius: 50%;
+        }
+        .detail-card p {
+            font-size: 1em; /* Slightly larger text */
+            color: #555;
+        }
+        .cta-footer {
+            background-color: var(--color-primary); /* Changed to primary color for high contrast */
+            padding: 50px; /* Increased padding */
+            text-align: center;
+            border-radius: 15px;
+            margin-top: 70px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Deep shadow */
+            color: var(--color-white);
+            border: 3px solid var(--color-secondary); /* Gold border for CTA */
+        }
+        .cta-footer h3 {
+            color: var(--color-secondary); /* Gold title */
+            margin-bottom: 15px;
+            font-size: 2.5em; /* Larger CTA title */
+        }
+        .cta-footer p {
+             font-size: 1.2em;
+             opacity: 0.9;
+        }
+        .cta-button {
+            background-color: var(--color-secondary); /* Gold button */
+            color: var(--color-primary); /* Dark text on gold */
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: 900; /* Extra bold */
+            border-radius: 50px;
+            transition: background-color 0.3s;
+            display: inline-block;
+            text-transform: uppercase;
+            margin-top: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .cta-button:hover {
+            background-color: #C0A130; /* Slightly darker gold on hover */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .seed-card {
+                flex-direction: column;
+            }
+            .seed-card-feature, .seed-card-benefits {
+                width: 100%;
+            }
+            .benefit-header h2 {
+                font-size: 2.5em;
+            }
+            .seed-card-benefits {
+                padding: 30px;
+                gap: 20px;
+            }
+        }
+
+        /* --- FOOTER (Copied from products.html) --- */
+        footer {
+            background-color: var(--color-primary);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER (Copied from products.html) -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-area">
+                    <img src="chiraayu_logo_1.png" alt="Chiraayu Premium Seeds Logo" style="height: 65px; margin-right: 10px;">
+                </div>
+                <div class="nav-links">
+                	<a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <!-- Active Link for Benefits Page -->
+                    <a href="benefits.html" class="active-link">Benefits</a>
+                    <a href="about.html">Our Story</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Header adjusted for premium style -->
+        <section class="benefit-header">
+            <div class="container">
+                <h2>The Science of Longevity</h2>
+                <p>Discover the power of nature's smallest treasures. Our premium seeds are packed with vital nutrients to support your **longevity (Chiraayu)** and wellness journey.</p>
+            </div>
+        </section>
+
+        <!-- Benefits Grid adjusted for premium style -->
+        <section id="benefits" class="benefits-section">
+            <div class="container">
+                
+                <!-- CHIA SEEDS -->
+                <div class="seed-card">
+                    
+                    <div class="seed-card-feature">
+                        <h3>Chia Seeds</h3>
+                        <p style="font-style: italic;">The **Omega-3** and **Fiber** Champions</p>
+                        <!-- Using placeholder images that look more premium -->
+                        <img src="https://placehold.co/400x250/177063/FFFFFF?text=PREMIUM+CHIA" alt="Premium Chia Seed Pouch Placeholder">
+                    </div>
+                    
+                    <div class="seed-card-benefits">
+                        <div class="detail-card">
+                            <h4>Omega-3 Powerhouse</h4>
+                            <p>Highest plant-based source of ALA, supporting **cardiovascular health** and reducing internal inflammation.</p>
+                        </div>
+                        <div class="detail-card">
+                            <h4>Digestive Regulator</h4>
+                            <p>Rich in soluble and insoluble fiber, essential for gut health and promoting gentle **digestive regularity**.</p>
+                        </div>
+                        <div class="detail-card">
+                            <h4>Sustained Energy</h4>
+                            <p>The balanced mix of fiber, protein, and fat delivers **long-lasting energy** and superior satiety.</p>
+                        </div>
+                        <div class="detail-card">
+                            <h4>Essential Minerals</h4>
+                            <p>Excellent source of calcium, phosphorus, and magnesium for maintaining **skeletal and muscle health**.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PUMPKIN SEEDS -->
+                <div class="seed-card" style="flex-direction: row-reverse;">
+                    
+                    <div class="seed-card-feature">
+                        <h3>Pumpkin Seeds</h3>
+                        <p style="font-style: italic;">The **Zinc** and **Magnesium** Marvels</p>
+                        <img src="https://placehold.co/400x250/177063/FFFFFF?text=PREMIUM+PUMPKIN" alt="Premium Pumpkin Seed Pouch Placeholder">
+                    </div>
+                    
+                    <div class="seed-card-benefits">
+                        <div class="detail-card">
+                            <h4>Tryptophan for Sleep</h4>
+                            <p>Contains tryptophan, an amino acid that aids the production of serotonin, naturally promoting **restful sleep**.</p>
+                        </div>
+                        <div class="detail-card">
+                            <h4>Immunity Boost (Zinc)</h4>
+                            <p>Extremely high in zinc, a vital nutrient for robust **immune function** and rapid cellular repair.</p>
+                        </div>
+                        <div class="detail-card">
+                            <h4>Men's Health Support</h4>
+                            <p>Rich in phytosterols and zinc, which are strongly linked to supporting **prostate and urinary tract health**.</p>
+                        </div>
+                        <div class="detail-card">
+                            <h4>Magnesium Powerhouse</h4>
+                            <p>A high source of magnesium, essential for over 300 body processes, including **nerve and muscle relaxation**.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FLAX SEEDS -->
+                <div class="seed-card">
+                    
+                    <div class="seed-card-feature">
+                        <h3>Flax Seeds</h3>
+                        <p style="font-style: italic;">Nature's **Cholesterol** and **Hormone** Regulator</p>
+                        <img src="https://placehold.co/400x250/177063/FFFFFF?text=PREMIUM+FLAX" alt="Premium Flax Seed Pouch Placeholder">
+                    </div>
+                    
+                    <div class="seed-card-benefits">
+                        <div class="detail-card">
+                            <h4>Lignan Power</h4>
+                            <p>Contain phytoestrogens (lignans) known for powerful **antioxidant properties** and hormonal balance support.</p>
+                        </div>
+                        <div class="detail-card">
+                            <h4>Natural Cholesterol Fighter</h4>
+                            <p>The fiber content naturally binds with cholesterol, helping to **lower bad LDL cholesterol** levels.</p>
+                        </div>
+                        <div class="detail-card">
+                            <h4>Stable Blood Sugar</h4>
+                            <p>High soluble fiber content helps slow the absorption of sugar, leading to more **stable glucose levels**.</p>
+                        </div>
+                        <div class="detail-card">
+                            <h4>High Fiber Density</h4>
+                            <p>One of the most fiber-dense seeds, crucial for digestive bulk and long-term **intestinal health**.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div> 
+            
+            <!-- Call to Action Footer (Premium Style) -->
+            <div class="container">
+                <div class="cta-footer">
+                    <h3>Ready to Unlock Your Longevity?</h3>
+                    <p>Start your journey to better health today with our expertly sourced seeds and discover the Chiraayu difference.</p>
+                    <a href="products.html" class="cta-button">
+                        Shop Our Premium Collection
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER (Copied from products.html) -->
+    <footer>
+        <div class="container">
+            <p>CHIRAAYU. Premium Seeds for a Healthy Life.</p>
+            <p style="margin-top: 5px;">&copy; 2025. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

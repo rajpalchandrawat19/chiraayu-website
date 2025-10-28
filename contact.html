@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiraayu - Contact Us</title>
+
+    <style>
+        /* --- BRAND COLORS & TYPOGRAPHY --- */
+        :root {
+            --color-primary: #0E4D40;     /* Dark Forest Green */
+            --color-secondary: #D4AF37;   /* Classic Gold/Bronze */
+            --color-text: #333333;
+            --color-light-bg: #E6EADF;    /* Soft, earthy background */
+            --color-white: #ffffff;
+            --color-accent-dark: #0A3D33;
+            --color-border: #cccccc;
+        }
+
+        /* --- GLOBAL STYLES --- */
+        body {
+            font-family: 'Georgia', serif; 
+            margin: 0;
+            padding: 0;
+            color: var(--color-text);
+            background-color: var(--color-white);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        .container {
+            width: 90%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        h1, h2, h3 {
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            background-color: var(--color-primary);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+        .logo-text {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--color-white);
+            text-transform: uppercase;
+            margin-left: 15px;
+            letter-spacing: 2px;
+        }
+        .nav-links a {
+            color: var(--color-white);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--color-secondary);
+        }
+        /* Active link style for the current page */
+        .active-link {
+            color: var(--color-secondary) !important;
+            border-bottom: 2px solid var(--color-secondary);
+            padding-bottom: 2px;
+        }
+
+        /* --- CONTACT PAGE STYLES --- */
+        .contact-hero {
+            text-align: center;
+            padding: 80px 0;
+            background-color: var(--color-light-bg);
+            border-bottom: 5px solid var(--color-secondary);
+        }
+        .contact-hero h2 {
+            font-size: 4em;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .contact-hero p {
+            font-size: 1.4em;
+            color: var(--color-primary);
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .contact-content {
+            padding: 60px 0;
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+        }
+        
+        /* Contact Form Styling */
+        .contact-form {
+            flex: 1;
+            min-width: 400px;
+            padding: 30px;
+            border-radius: 15px;
+            background-color: var(--color-white);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--color-light-bg);
+        }
+        .contact-form h3 {
+            font-size: 2em;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--color-secondary);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--color-accent-dark);
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1em;
+            font-family: inherit;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--color-secondary);
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+            outline: none;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        .submit-button {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s, transform 0.2s;
+            display: block;
+            width: 100%;
+        }
+        .submit-button:hover {
+            background-color: var(--color-accent-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Contact Info Styling */
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            border-radius: 15px;
+            background-color: var(--color-light-bg);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--color-primary);
+        }
+        .contact-info h3 {
+            font-size: 2em;
+            margin-bottom: 25px;
+            color: var(--color-secondary);
+        }
+        .info-block {
+            margin-bottom: 30px;
+        }
+        .info-block h4 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+        }
+        .info-block h4::before {
+            content: '🌿'; /* Simple nature-themed icon */
+            margin-right: 10px;
+            font-size: 1.2em;
+            color: var(--color-secondary);
+        }
+        .info-block p {
+            font-size: 1.1em;
+            color: var(--color-text);
+            padding-left: 30px;
+        }
+        
+        /* Map Placeholder */
+        .map-placeholder {
+            margin-top: 40px;
+            height: 250px;
+            background-color: #ccc;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 250px;
+            font-size: 1.5em;
+            color: var(--color-primary);
+            border: 2px solid var(--color-secondary);
+            font-style: italic;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .contact-content {
+                flex-direction: column;
+                padding: 40px 0;
+            }
+            .contact-form, .contact-info {
+                min-width: 100%;
+            }
+            .contact-hero h2 {
+                font-size: 3em;
+            }
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--color-primary);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER (Navigation Setup) -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-area">
+                    <img src="chiraayu_logo_1.png" alt="Chiraayu Premium Seeds Logo" style="height: 65px; margin-right: 10px;">
+                </div>
+                <div class="nav-links">
+                	<a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <!-- Active Link for Benefits Page -->
+                    <a href="benifits.html">Benefits</a>
+                    <a href="about.html">Our Story</a>
+                    <a href="contact.html"class="active-link">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Header -->
+        <section class="contact-hero">
+            <div class="container">
+                <h2>Connect with Chiraayu</h2>
+                <p>We're here to answer your questions about our products, sourcing, and your wellness journey.</p>
+            </div>
+        </section>
+
+        <section class="contact-content">
+            <div class="container" style="display: flex; gap: 40px; justify-content: center;">
+                
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form action="submit_form.php" method="POST"> <!-- Placeholder action -->
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="name@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="Inquiry about Chia Seeds">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required placeholder="Type your detailed message here..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Inquiry</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info Block -->
+                <div class="contact-info">
+                    <h3>Our Details</h3>
+                    
+                    <div class="info-block">
+                        <h4>Office Address</h4>
+                        <p>174, Yash Nagar, Mandsaur, Madhya Pradesh 458001, India</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h4>Customer Care</h4>
+                        <p>Phone: +91 9654267177</p>
+                        <p>Email: care@chiraayu.in (Placeholder)</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h4>Business Hours</h4>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM (IST)</p>
+                        <p>Saturday: 10:00 AM - 2:00 PM (IST)</p>
+                    </div>
+                    
+                    <!-- Map Placeholder -->
+                    <div class="map-placeholder">
+                        Location on Map
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>CHIRAAYU. Premium Seeds for a Healthy Life.</p>
+            <p style="margin-top: 5px;">&copy; 2025. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
